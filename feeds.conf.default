@@ -11,6 +11,4 @@ src-git helloworld https://github.com/fw876/helloworld.git
 #src-link custom /usr/src/openwrt/custom-feed
 src-git kenzo https://github.com/kenzok8/openwrt-packages
 src-git small https://github.com/kenzok8/small
-src-git kucat https://github.com/sirpdboy/luci-theme-kucat
-src-git sirpdboy https://github.com/sirpdboy/luci-app-advancedplus
-src-git opentopd  https://github.com/sirpdboy/sirpdboy-package
+src-git opentopd https://github.com/sirpdboy/sirpdboy-package
