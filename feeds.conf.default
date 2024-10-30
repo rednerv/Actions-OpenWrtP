@@ -8,6 +8,7 @@ src-git helloworld https://github.com/fw876/helloworld.git
 #src-git video https://github.com/openwrt/video.git
 #src-git targets https://github.com/openwrt/targets.git
 #src-git oldpackages http://git.openwrt.org/packages.git
-src-link custom /usr/src/openwrt/custom-feed
+#src-link custom /usr/src/openwrt/custom-feed
 src-git sirpdboy https://github.com/sirpdboy/sirpdboy-package
 src-git istore https://github.com/linkease/istore
+src-git OpenOray https://github.com/OrayOS/OpenOray
