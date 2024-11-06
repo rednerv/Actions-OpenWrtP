@@ -50,6 +50,20 @@ jobs:
         sudo mkdir -p /workdir
         sudo chown $USER:$GROUPS /workdir
 
+    - name: Add GCC 14.2.0 repository
+      run: |
+        sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
+        sudo apt-get update
+
+    - name: Install GCC 14.2.0
+      run: |
+        sudo apt-get install -y gcc-14 g++-14
+
+    - name: Set CC and CXX environment variables
+      run: |
+        echo "CC=gcc-14" >> $GITHUB_ENV
+        echo "CXX=g++-14" >> $GITHUB_ENV
+
     - name: Clone source code
       working-directory: /workdir
       run: |
@@ -70,12 +84,7 @@ jobs:
         haskell: true
         large-packages: true
         swap-storage: true
-
-    - name: Set CC and CXX environment variables
-      run: |
-        echo "CC=gcc-13" >> $GITHUB_ENV
-        echo "CXX=g++-13" >> $GITHUB_ENV
-        
+     
     - name: Load custom feeds
       run: |
         [ -e $FEEDS_CONF ] && mv $FEEDS_CONF openwrt/feeds.conf.default
