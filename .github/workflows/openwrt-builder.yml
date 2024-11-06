@@ -71,6 +71,11 @@ jobs:
         large-packages: true
         swap-storage: true
 
+    - name: Set CC and CXX environment variables
+      run: |
+        echo "CC=gcc-13" >> $GITHUB_ENV
+        echo "CXX=g++-13" >> $GITHUB_ENV
+        
     - name: Load custom feeds
       run: |
         [ -e $FEEDS_CONF ] && mv $FEEDS_CONF openwrt/feeds.conf.default
